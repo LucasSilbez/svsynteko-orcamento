@@ -1,0 +1,48 @@
+body {
+    background: url('../assets/fundo.png') center/cover fixed no-repeat;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    /* Cor do texto */
+}
+
+.orcButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Espaçamento entre os botões */
+}
+
+.orcButtons a {
+    display: block;
+    width: 200px;
+    /* Largura fixa para todos os botões */
+    padding: 15px 20px;
+    background-color: #3a7e9e;
+    /* Cor de fundo verde - ajuste conforme necessário */
+    color: #fff;
+    /* Cor do texto nos botões */
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.orcButtons a:hover {
+    background-color: #a06e45;
+    /* Cor de fundo verde mais escura no hover - ajuste conforme necessário */
+}
+
+h1 {
+    margin-bottom: 100px;
+    color: #ccc;
+}

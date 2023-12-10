@@ -1,0 +1,100 @@
+body {
+    background: url('../assets/fundo.png') center/cover fixed no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#tabelaOrcamento {
+    margin-top: 20px;
+    margin: 90px;
+    margin-left: -500px;
+}
+
+#resultadoOrcamento {
+    color: #ccc;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultadoOrcamento th,
+#resultadoOrcamento td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#resultadoOrcamento th {
+    background-color: #3a7e9e;
+}
+
+#resultadoOrcamento td:last-child {
+    text-align: right;
+}
+
+#resultadoOrcamento td strong {
+    font-weight: bold;
+}
+
+#resultadoOrcamento td[colspan="2"] {
+    text-align: right;
+}
+
+#orcamentoForm {
+    color: #ccc;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Adicione este estilo para centralizar o formulário */
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    width: 200px;
+    padding: 3px 3px;
+    background-color: #3a7e9e;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a06e45;
+}
