@@ -294,7 +294,7 @@ function gerarOrcamento() {
         </tr>
         <tr>
             <td>Mão de obra rodapé/cordão</td>
-            <td>Para ${metragemLinear.toFixed(0)}ml</td>
+            <td>Para ${valorCmRodape.toFixed(0)}cm</td>
             <td>${custoMaoDeObraCordao.toFixed(2)}</td>
         </tr>
         <tr>
