@@ -10,7 +10,7 @@ body {
 
 #formContainer {
     position: absolute;
-    top: 15%;
+    top: 8%;
     /* Adjusted size */
     left: 40%;
     /* Adjusted size */
@@ -18,7 +18,7 @@ body {
 
 #tabelaOrcamento {
     position: absolute;
-    top: 15%;
+    top: 8%;
     /* Adjusted size */
     left: 5%;
     /* Adjusted size */
@@ -110,4 +110,19 @@ button {
 
 button:hover {
     background-color: #a06e45;
+}
+
+
+@media (max-width: 940px) {
+    #formContainer {
+        position: absolute;
+        top: 8%;
+        left: 40%;
+    }
+
+    #tabelaOrcamento {
+        position: absolute;
+        top: 80%;
+        left: 40%;
+    }
 }
