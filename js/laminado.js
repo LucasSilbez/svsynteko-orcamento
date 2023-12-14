@@ -105,6 +105,7 @@ async function gerarOrcamento() {
 
     const lucro = totalLucro - subtotal;
 
+    const cartao = totalLucro * 1.12;
 
     const tabelaOrcamento = document.getElementById("tabelaOrcamento");
     tabelaOrcamento.innerHTML = `
@@ -171,6 +172,11 @@ async function gerarOrcamento() {
             <td>${custoCordao.toFixed(2)}</td>
         </tr>
         <tr>
+            <td>Subtotal</td>
+            <td>-</td>
+            <td>${subtotal.toFixed(2)}</td>
+        </tr>
+        <tr>
             <td>Lucro</td>
             <td>35%</td>
             <td>${lucro.toFixed(2)}</td>
@@ -178,6 +184,11 @@ async function gerarOrcamento() {
         <tr>
             <td colspan="2"><strong>Total</strong></td>
             <td>${totalLucro.toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Total no cartão</td>
+            <td>Juros 12%</td>
+            <td>${cartao.toFixed(2)}</td>
         </tr>
         </table>
     `;

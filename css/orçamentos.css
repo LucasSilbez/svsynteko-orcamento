@@ -12,7 +12,7 @@ body {
     position: absolute;
     top: 8%;
     /* Adjusted size */
-    left: 40%;
+    left: 41%;
     /* Adjusted size */
 }
 
@@ -117,12 +117,12 @@ button:hover {
     #formContainer {
         position: absolute;
         top: 8%;
-        left: 40%;
+        left: 25%;
     }
 
     #tabelaOrcamento {
         position: absolute;
         top: 80%;
-        left: 40%;
+        left: 25%;
     }
 }
