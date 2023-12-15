@@ -23,8 +23,11 @@ popularSelectFromAPI("acessorios");
 
 async function gerarOrcamento() {
     const laminadoId = document.getElementById("laminados").value;
-    const quantidadeLaminadoTotal = parseFloat(document.getElementById("metragemTotal").value);
-    const metragemLinear = parseFloat(document.getElementById("metragemLinear").value);
+
+    const quantidadeLaminadoTotalOriginal = parseFloat(document.getElementById("metragemTotal").value);
+    const metragemLinearOriginal = parseFloat(document.getElementById("metragemLinear").value);
+    const quantidadeLaminadoTotal = quantidadeLaminadoTotalOriginal * 1.10;
+    const metragemLinear = metragemLinearOriginal * 1.15;
 
     const rodapeId = document.getElementById("rodapes").value;
 
