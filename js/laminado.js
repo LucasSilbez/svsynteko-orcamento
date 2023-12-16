@@ -83,13 +83,19 @@ async function gerarOrcamento() {
     const custoLaminados = quantidadeCaixas * precoLaminado;
 
 
-    const quantidadePerfilRedutor = parseFloat(document.getElementById("quantidadePerfilRedutor").value);
+    let quantidadePerfilRedutor = parseFloat(document.getElementById("quantidadePerfilRedutor").value);
+    if (isNaN(quantidadePerfilRedutor)) {
+        quantidadePerfilRedutor = 0;
+    }
     const precoPerfilRedutor = produtosAPI.acessorios.find(produto => produto.nome === "Perfil")["preco"];
     const custoPerfilRedutor = quantidadePerfilRedutor * precoPerfilRedutor;
 
 
     const cordaoId = produtosAPI.rodapes.find(produto => produto.nome === "Eucafloor Cordão Estilo")?.id;
-    const quantidadeCordao = parseFloat(document.getElementById("quantidadeCordao").value);
+    let quantidadeCordao = parseFloat(document.getElementById("quantidadeCordao").value);
+    if (isNaN(quantidadeCordao)) {
+        quantidadeCordao = 0;
+    }
     const precoCordao = produtosAPI.rodapes.find(produto => produto.id == cordaoId)["preco total barra"];
     const custoCordao = quantidadeCordao * precoCordao;
 

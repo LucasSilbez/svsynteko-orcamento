@@ -10,39 +10,34 @@ body {
 
 #formContainer {
     position: absolute;
-    top: 8%;
-    /* Adjusted size */
-    left: 41%;
-    /* Adjusted size */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #tabelaOrcamento {
     position: absolute;
     top: 8%;
-    /* Adjusted size */
     left: 5%;
-    /* Adjusted size */
 }
 
 #resultadoOrcamento {
     color: #ccc;
     width: 80%;
-    /* Adjusted size */
     border-collapse: collapse;
+    font-size: 14px;
 }
 
 #resultadoOrcamento th,
 #resultadoOrcamento td {
     border: 1px solid #ddd;
     padding: 6px;
-    /* Adjusted size */
     text-align: left;
 }
 
 #resultadoOrcamento th {
     background-color: #3a7e9e;
     font-size: 16px;
-    /* Adjusted size */
 }
 
 #resultadoOrcamento td:last-child {
@@ -52,7 +47,6 @@ body {
 #resultadoOrcamento td strong {
     font-weight: bold;
     font-size: 14px;
-    /* Adjusted size */
 }
 
 #resultadoOrcamento td[colspan="2"] {
@@ -62,9 +56,7 @@ body {
 #orcamentoForm {
     color: #ccc;
     width: 250px;
-    /* Adjusted size */
     padding: 15px;
-    /* Adjusted size */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -74,36 +66,29 @@ body {
 label {
     display: block;
     margin-bottom: 6px;
-    /* Adjusted size */
 }
 
 input,
 select {
     width: 100%;
     padding: 4px;
-    /* Adjusted size */
     margin-bottom: 8px;
-    /* Adjusted size */
     box-sizing: border-box;
+    text-align: center;
 }
 
 h2 {
     margin-top: 3px;
-    /* Adjusted size */
 }
 
 button {
     margin-top: 10px;
-    /* Adjusted size */
     width: 180px;
-    /* Adjusted size */
     padding: 2px;
-    /* Adjusted size */
     background-color: #3a7e9e;
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    /* Adjusted size */
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -116,27 +101,31 @@ button:hover {
 @media (max-width: 1250px) {
     #formContainer {
         position: absolute;
-        top: 8%;
-        left: 25%;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     #tabelaOrcamento {
         position: absolute;
-        top: 110%;
-        left: 25%;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 @media (max-width: 360px) {
     #formContainer {
         position: absolute;
-        top: 8%;
-        left: 10%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     #tabelaOrcamento {
         position: absolute;
-        top: 110%;
-        left: 7%;
+        top: 150%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
