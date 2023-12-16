@@ -127,8 +127,9 @@ button:hover {
 
     #tableContainer {
         position: absolute;
-        top: 150%;
+        top: 115%;
         left: 50%;
         transform: translate(-50%, -50%);
+        padding: 100px 140px;
     }
 }
