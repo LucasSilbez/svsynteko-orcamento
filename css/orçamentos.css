@@ -55,6 +55,11 @@ body {
     text-align: right;
 }
 
+#total {
+    background-color: #3a7e9e;
+    font-size: 16px;
+}
+
 #orcamentoForm {
     color: #ccc;
     width: 250px;

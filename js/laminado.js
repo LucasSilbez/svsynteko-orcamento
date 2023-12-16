@@ -162,7 +162,7 @@ async function gerarOrcamento() {
             <td>${custoMaoDeObra.toFixed(2)}</td>
         </tr>
         <tr>
-            <td>Mão de obra rodapé/cordão</td>
+            <td>Mão de obra rodapé</td>
             <td>Para ${valorCmRodape.toFixed(0)}cm</td>
             <td>${custoMaoDeObraCordao.toFixed(2)}</td>
         </tr>
@@ -191,7 +191,7 @@ async function gerarOrcamento() {
             <td>35%</td>
             <td>${lucro.toFixed(2)}</td>
         </tr>
-        <tr>
+        <tr id="total">
             <td colspan="2"><strong>Total</strong></td>
             <td>${totalLucro.toFixed(2)}</td>
         </tr>
