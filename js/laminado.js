@@ -118,6 +118,7 @@ async function gerarOrcamento() {
 
     const tabelaOrcamento = document.getElementById("tabelaOrcamento");
     tabelaOrcamento.innerHTML = `
+    <div id="tableContainer">
     <table id="resultadoOrcamento">
         <tr>
             <th>Descrição</th>
@@ -200,6 +201,7 @@ async function gerarOrcamento() {
             <td>${cartao.toFixed(2)}</td>
         </tr>
         </table>
+        </div>
     `;
     tabelaOrcamento.style.display = 'block';
 }
