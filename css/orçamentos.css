@@ -126,3 +126,17 @@ button:hover {
         left: 25%;
     }
 }
+
+@media (max-width: 360px) {
+    #formContainer {
+        position: absolute;
+        top: 8%;
+        left: 10%;
+    }
+
+    #tabelaOrcamento {
+        position: absolute;
+        top: 80%;
+        left: 10%;
+    }
+}
