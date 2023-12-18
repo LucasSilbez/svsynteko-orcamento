@@ -115,14 +115,14 @@ button:hover {
 
     #tableContainer {
         position: absolute;
-        top: 125%;
+        top: 165%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 100px 140px;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     #formContainer {
         position: absolute;
         top: 50%;
@@ -137,7 +137,7 @@ button:hover {
 
     #tableContainer {
         position: absolute;
-        top: 150%;
+        top: 180%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 100px 140px;
