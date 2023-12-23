@@ -15,6 +15,18 @@ body {
     transform: translate(-50%, -50%);
 }
 
+#checkbox {
+    display: grid;
+    justify-content: flex-start;
+
+
+}
+
+#increase15Percent {
+    justify-content: end;
+}
+
+
 #tableContainer {
     position: absolute;
     top: 50%;

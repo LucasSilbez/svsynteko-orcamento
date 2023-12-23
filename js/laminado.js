@@ -26,8 +26,15 @@ async function gerarOrcamento() {
 
     const quantidadeLaminadoTotalOriginal = parseFloat(document.getElementById("metragemTotal").value);
     const metragemLinearOriginal = parseFloat(document.getElementById("metragemLinear").value);
+
+    let increasePercentage = 0.15; // Aumento padrão é de 15%
+
+    if (document.getElementById("increase10Percent").checked) {
+        increasePercentage = 0.10; // Usuário selecionou aumento de 10%
+    }
+
     const quantidadeLaminadoTotal = quantidadeLaminadoTotalOriginal * 1.10;
-    const metragemLinear = metragemLinearOriginal * 1.15;
+    const metragemLinear = metragemLinearOriginal * (1 + increasePercentage);
 
     const rodapeId = document.getElementById("rodapes").value;
 
