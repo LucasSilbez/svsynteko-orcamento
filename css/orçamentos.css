@@ -18,12 +18,18 @@ body {
 #checkbox {
     display: grid;
     justify-content: flex-start;
+}
 
-
+#increase10Percent {
+    justify-content: end;
+    height: 10x;
+    width: 10px;
 }
 
 #increase15Percent {
     justify-content: end;
+    height: 10x;
+    width: 10px;
 }
 
 
