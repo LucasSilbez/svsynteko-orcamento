@@ -35,7 +35,7 @@ async function gerarOrcamentoVini() {
     }
 
     const quantidadeVinilicoTotal = quantidadeVinilicoTotalOriginal * (1 + increasePercentage);
-    const metragemLinear = metragemLinearOriginal * (1 + increasePercentage);
+    const metragemLinear = Math.ceil(metragemLinearOriginal * (1 + increasePercentage));
 
     const rodapeId = document.getElementById("rodapes").value;
 

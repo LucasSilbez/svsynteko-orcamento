@@ -17,41 +17,28 @@ async function popularSelectFromAPI(tipoProduto) {
     });
 }
 
-popularSelectFromAPI("laminados");
 popularSelectFromAPI("rodapes");
 popularSelectFromAPI("acessorios");
 
-async function gerarOrcamento() {
-    const laminadoId = document.getElementById("laminados").value;
 
-    const quantidadeLaminadoTotalOriginal = parseFloat(document.getElementById("metragemTotal").value);
+async function gerarOrcamentoRodape() {
+    
     const metragemLinearOriginal = parseFloat(document.getElementById("metragemLinear").value);
 
     let increasePercentage = 0.15; // Aumento padrão é de 15%
 
     if (document.getElementById("increase10Percent").checked) {
-        increasePercentage = 0.10;
+        increasePercentage = 0.10; 
     }
 
-    const quantidadeLaminadoTotal = quantidadeLaminadoTotalOriginal * 1.10;
     const metragemLinear = Math.ceil(metragemLinearOriginal * (1 + increasePercentage));
 
     const rodapeId = document.getElementById("rodapes").value;
 
     const produtosAPI = await getProdutosFromAPI();
 
-    const precoLaminado = produtosAPI.laminados.find(produto => produto.id == laminadoId)["preco total caixa"];
     const precoRodape = produtosAPI.rodapes.find(produto => produto.id == rodapeId)["preco total barra"];
     const valorCmRodape = produtosAPI.rodapes.find(produto => produto.id == rodapeId)["cm"];
-
-
-    const metragemPorCaixa = produtosAPI.laminados.find(produto => produto.id == laminadoId)["metragem embalagem / Cx"];
-    let quantidadeCaixas = quantidadeLaminadoTotal / metragemPorCaixa;
-    quantidadeCaixas = Math.ceil(quantidadeCaixas);
-
-
-    const quantidadeManta = Math.ceil(quantidadeLaminadoTotal / 10);
-
 
     let quantidadeCola1_5kg = 0;
     let quantidadeCola5kg = 0;
@@ -72,30 +59,19 @@ async function gerarOrcamento() {
     }
 
 
-    const quantidadePacotePregos = 1;
-
-
-    const custoManta = quantidadeManta * produtosAPI.acessorios.find(produto => produto.nome == "Manta acrílica 2mm")["preco"];
+   
     const custoCola1_5kg = quantidadeCola1_5kg * produtosAPI.acessorios.find(produto => produto.nome == "Cola para rodapé Persipisos 1.5kg")["preco"];
     const custoCola5kg = quantidadeCola5kg * produtosAPI.acessorios.find(produto => produto.nome == "Cola para rodapé Persipisos 5kg")["preco"];
-    const custoPacotePregos = quantidadePacotePregos * produtosAPI.acessorios.find(produto => produto.nome == "Pacote Pregos")["preco"];
 
+
+    const quantidadePacotePregos = 1;
+
+    const custoPacotePregos = quantidadePacotePregos * produtosAPI.acessorios.find(produto => produto.nome == "Pacote Pregos")["preco"];
 
     const tamanhoBarra = produtosAPI.rodapes.find(produto => produto.id == rodapeId)["tamanho da barra"];
     let quantidadeBarras = metragemLinear / tamanhoBarra;
     quantidadeBarras = Math.ceil(quantidadeBarras);
     const custoRodapes = quantidadeBarras * precoRodape;
-
-
-    const custoLaminados = quantidadeCaixas * precoLaminado;
-
-
-    let quantidadePerfilRedutor = parseFloat(document.getElementById("quantidadePerfilRedutor").value);
-    if (isNaN(quantidadePerfilRedutor)) {
-        quantidadePerfilRedutor = 0;
-    }
-    const precoPerfilRedutor = produtosAPI.acessorios.find(produto => produto.nome === "Perfil")["preco"];
-    const custoPerfilRedutor = quantidadePerfilRedutor * precoPerfilRedutor;
 
 
     const cordaoId = produtosAPI.rodapes.find(produto => produto.nome === "Eucafloor Cordão Estilo")?.id;
@@ -107,15 +83,12 @@ async function gerarOrcamento() {
     const custoCordao = quantidadeCordao * precoCordao;
 
 
-    const custoMaoDeObra = 25 * quantidadeLaminadoTotal;
-
-
     const custoMaoDeObraCordao = metragemLinear * valorCmRodape;
 
     const custoFrete = 224;
 
-
-    const subtotal = custoLaminados + custoRodapes + custoManta + custoCola1_5kg + custoCola5kg + custoPacotePregos + custoMaoDeObra + custoMaoDeObraCordao + custoFrete + custoPerfilRedutor + custoCordao;
+    const subtotal = custoRodapes +  custoPacotePregos +
+                       custoMaoDeObraCordao + custoFrete + custoCordao + custoCola1_5kg + custoCola5kg;
 
     const totalLucro = subtotal * 1.35;
 
@@ -134,19 +107,9 @@ async function gerarOrcamento() {
         </tr>
         
         <tr>
-            <td>Caixas de ${produtosAPI.laminados.find(produto => produto.id == laminadoId).nome}</td>
-            <td>${quantidadeCaixas.toFixed(0)}</td>
-            <td>${custoLaminados.toFixed(2)}</td>
-        </tr>
-        <tr>
             <td>${produtosAPI.rodapes.find(produto => produto.id == rodapeId).nome} (${produtosAPI.rodapes.find(produto => produto.id == rodapeId).cm} cm)</td>
             <td>${quantidadeBarras.toFixed(0)}</td>
             <td>${custoRodapes.toFixed(2)}</td>
-        </tr>
-        <tr>
-            <td>Manta acrílica 2mm</td>
-            <td>${quantidadeManta}</td>
-            <td>${custoManta.toFixed(2)}</td>
         </tr>
         <tr>
             <td>Cola para rodapé (1.5kg)</td>
@@ -164,11 +127,6 @@ async function gerarOrcamento() {
             <td>${custoPacotePregos.toFixed(2)}</td>
         </tr>
         <tr>
-            <td>Mão de obra</td>
-            <td>Para ${quantidadeLaminadoTotal.toFixed(0)}m²</td>
-            <td>${custoMaoDeObra.toFixed(2)}</td>
-        </tr>
-        <tr>
             <td>Mão de obra rodapé</td>
             <td>Para ${valorCmRodape.toFixed(0)}cm</td>
             <td>${custoMaoDeObraCordao.toFixed(2)}</td>
@@ -177,11 +135,6 @@ async function gerarOrcamento() {
             <td>Frete</td>
             <td>1</td>
             <td>${custoFrete.toFixed(2)}</td>
-        </tr>
-        <tr>
-            <td>${produtosAPI.acessorios.find(produto => produto.nome === "Perfil").nome}</td>
-            <td>${quantidadePerfilRedutor.toFixed(0)}</td>
-            <td>${custoPerfilRedutor.toFixed(2)}</td>
         </tr>
         <tr>
             <td>${produtosAPI.rodapes.find(produto => produto.nome === "Eucafloor Cordão Estilo").nome}</td>
